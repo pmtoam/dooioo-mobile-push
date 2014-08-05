@@ -41,23 +41,28 @@ public class AxingTestDooiooMobilePush extends TestCase
 		//onBind errorCode=0 appid=2617484 userId=836728182485935917 
 		//channelId=4538636888713755467 requestId=652663895
 
-		String userId = "836728182485935917";
-		String channelId = "4538636888713755467";
+		String employeeCode = "104409";
+		
+//		String userId = "836728182485935917";
+//		String channelId = "4538636888713755467";
+		
 		// request.setUserId(userId);
 		// request.setChannelId(channelId);
 		// request.setMessageType(MessageType.notify);
-		String message = String.format("{'title':'%s'," + "'description':'%s',"
-				+ "'notification_builder_id':0,"
-				+ "'notification_basic_style':7," + "'open_type':0,"
-				+ "'custom_content':{'test':'test'}}", "标题", "您收到一条新消息");
+//		String message = String.format("{'title':'%s'," + "'description':'%s',"
+//				+ "'notification_builder_id':0,"
+//				+ "'notification_basic_style':7," + "'open_type':0,"
+//				+ "'custom_content':{'test':'test'}}", "标题", "您收到一条新消息");
+//		String message = "{\"title\":\"wang\",\"description\":\"yuexing\",\"custom_content\":\"80001\"}";
+//		System.out.println(message);
 		// request.setMessages(message);
 		// request.setPushType(PushType.single_user);
 		// request.setMessageKeys("aaa");
 		// PushResponse<Integer> response = client.pushMessage(request);
 		// System.out.println(response);
 
-		AxingDooiooMobilePush.pushMessageOneOnlyUser(userId, channelId, message,
-				"testKey");
+//		AxingDooiooMobilePush.pushMessageOneOnlyUser(userId, channelId, message, "testKey");
+		AxingDooiooMobilePush.pushMessageOneOnlyUser(employeeCode, "80001");
 	}
 
 	public void pushMessageOne()
