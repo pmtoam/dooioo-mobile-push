@@ -63,9 +63,9 @@ public class AxingTestDooiooMobilePush extends TestCase
 
 //		AxingDooiooMobilePush.pushMessageOneOnlyUser(userId, channelId, message, "testKey");
 		
-		String employeeCode = "102804";
-		int result = AxingDooiooMobilePush.pushMessageOneOnlyUser(employeeCode, MessageCode.MESSAGE_001);
-		System.out.println("result = " + result);
+//		String employeeCode = "102804";
+//		int result = AxingDooiooMobilePush.pushMessageOneOnlyUser(employeeCode, MessageCode.MESSAGE_001);
+//		System.out.println("result = " + result);
 	}
 
 //	public void pushMessageOne()
