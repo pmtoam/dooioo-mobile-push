@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 
+import org.apache.commons.lang.StringUtils;
+
 /**
  * 德佑基于百度云服务的消息推送工具类(仅支持推送到Android手机)
  * 
@@ -16,14 +18,20 @@ public final class AxingDooiooMobilePush
 	/**
 	 * 推送一条消息到【我的客户】
 	 * @param employeeCode 员工号
-	 * @param msgCode 消息类型代号,如100001,200001...用于判断是什么类型的消息
+	 * @param msgCode 消息类型代号,用于判断是什么类型的消息
 	 * @return 返回值只作为调试，实际调用中，直接调用此方法，可忽略任何返回值：<br>
 	 * 1：推送成功<br>
 	 * -1：推送失败 [查询不到绑定的ID]<br>
 	 * -2：推送失败 [客户端没有绑定]<br>
+	 * -3：推送失败 [employeeCode null]<br>
 	 */
-	public static int pushMessageOneOnlyUser(String employeeCode, String msgCode)
+	public static int pushMessageOneOnlyUser(String employeeCode, MessageCode msgCode)
 	{
+		if (StringUtils.isEmpty(employeeCode.trim()))
+		{
+			return -3;
+		}
+		
 		String[] ids = getEmployeeIds(employeeCode);
 		
 		if (ids != null && ids.length == 2)
