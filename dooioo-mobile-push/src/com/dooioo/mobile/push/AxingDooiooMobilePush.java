@@ -17,9 +17,11 @@ public final class AxingDooiooMobilePush
 	 * 推送一条消息到【我的客户】
 	 * @param employeeCode 员工号
 	 * @param msgCode 消息类型代号,如100001,200001...用于判断是什么类型的消息
-	 * @return
+	 * @return 1：推送成功<br>
+	 * -1：推送失败 [查询不到绑定的ID]<br>
+	 * -2：推送失败 [客户端没有绑定]<br>
 	 */
-	public static PushResponse<Integer> pushMessageOneOnlyUser(String employeeCode, String msgCode)
+	public static int pushMessageOneOnlyUser(String employeeCode, String msgCode)
 	{
 		String[] ids = getEmployeeIds(employeeCode);
 		
@@ -39,11 +41,20 @@ public final class AxingDooiooMobilePush
 					+ "'custom_content':{'msgCode':'" + msgCode + "'}}", "消息提醒", "您收到一条新消息");
 			request.setMessages(message);
 			request.setPushType(PushType.single_user);
-			request.setMessageKeys("neverKeys");
-			PushResponse<Integer> response = client.pushMessage(request);
-			return response;
+			request.setMessageKeys("nonKeys");
+			try
+			{
+				client.pushMessage(request);
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+				return -2;
+			}
+			return 1;
 		}
-		return null;
+		
+		return -1;
 	}
 	
 	private static String[] getEmployeeIds(String employeeCode)
