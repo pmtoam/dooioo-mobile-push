@@ -1,6 +1,6 @@
 package com.dooioo.mobile.push;
 
-public class DooiooMobilePush
+public class AxingDooiooMobilePush
 {
 	/**
 	 * 

@@ -6,7 +6,7 @@ import java.net.URL;
 
 import junit.framework.TestCase;
 
-public class TestDooiooMobilePush extends TestCase
+public class AxingTestDooiooMobilePush extends TestCase
 {
 
 	// Ãû³Æ£ºTestMyApp
@@ -56,7 +56,7 @@ public class TestDooiooMobilePush extends TestCase
 		// PushResponse<Integer> response = client.pushMessage(request);
 		// System.out.println(response);
 
-		DooiooMobilePush.pushMessageOneOnlyUser(userId, channelId, message,
+		AxingDooiooMobilePush.pushMessageOneOnlyUser(userId, channelId, message,
 				"testKey");
 	}
 
