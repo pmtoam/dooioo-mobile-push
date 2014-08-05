@@ -2,6 +2,12 @@ package com.dooioo.mobile.push;
 
 import junit.framework.TestCase;
 
+/**
+ * ²âÊÔµ¥Ôª
+ * 
+ * @author PMTOAM
+ *
+ */
 public class AxingTestDooiooMobilePush extends TestCase
 {
 
@@ -57,9 +63,9 @@ public class AxingTestDooiooMobilePush extends TestCase
 
 //		AxingDooiooMobilePush.pushMessageOneOnlyUser(userId, channelId, message, "testKey");
 		
-		String employeeCode = "104409";
-		int result = AxingDooiooMobilePush.pushMessageOneOnlyUser(employeeCode, "80001");
-		System.out.println("result = " + result);
+//		String employeeCode = "104409";
+//		int result = AxingDooiooMobilePush.pushMessageOneOnlyUser(employeeCode, "80001");
+//		System.out.println("result = " + result);
 	}
 
 //	public void pushMessageOne()

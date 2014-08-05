@@ -17,7 +17,8 @@ public final class AxingDooiooMobilePush
 	 * 推送一条消息到【我的客户】
 	 * @param employeeCode 员工号
 	 * @param msgCode 消息类型代号,如100001,200001...用于判断是什么类型的消息
-	 * @return 1：推送成功<br>
+	 * @return 返回值只作为调试，实际调用中，直接调用此方法，可忽略任何返回值：<br>
+	 * 1：推送成功<br>
 	 * -1：推送失败 [查询不到绑定的ID]<br>
 	 * -2：推送失败 [客户端没有绑定]<br>
 	 */
