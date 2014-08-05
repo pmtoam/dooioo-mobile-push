@@ -1,5 +1,9 @@
 package com.dooioo.mobile.push;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+
 import junit.framework.TestCase;
 
 public class TestDooiooMobilePush extends TestCase
@@ -111,5 +115,29 @@ public class TestDooiooMobilePush extends TestCase
 	public void testFrist()
 	{
 		System.out.println("ssssss");
+	}
+	
+	public void testReqUrl()
+	{
+		String urlStr = "http://myclients.duapp.com/mysqlbind/deviceinfo?userId=617943248495163974&channelId=3688022906336843532";
+		try
+		{
+			URL url=new URL(urlStr);
+			InputStreamReader isr=new InputStreamReader(url.openStream());
+			BufferedReader br=new BufferedReader(isr);
+			
+			String str;
+			while((str=br.readLine())!=null)
+			{
+				System.out.println(str);
+			}
+			
+			br.close();
+			isr.close();
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
 	}
 }
