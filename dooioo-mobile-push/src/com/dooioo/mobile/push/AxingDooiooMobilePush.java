@@ -7,7 +7,7 @@ import java.net.URL;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * 德佑基于百度云服务的消息推送工具类(仅支持推送到Android手机)
+ * 基于百度云服务的德佑消息推送工具类(仅支持推送到Android手机)
  * 
  * @author 王月星 | 德佑工号：104409 | 手机：18116136307
  * @category 德佑-经纪研发中心-研发部-移动开发部
@@ -16,7 +16,7 @@ public final class AxingDooiooMobilePush
 {
 
 	/**
-	 * 推送一条消息到【我的客户】
+	 * 推送一条消息到Android客户端
 	 * @param employeeCode 员工号
 	 * @param msgCode 消息类型代号,用于判断是什么类型的消息
 	 * @return 返回值只作为调试，实际调用中，直接调用此方法，可忽略任何返回值：<br>
@@ -67,7 +67,7 @@ public final class AxingDooiooMobilePush
 	}
 	
 	/**
-	 * 推送一条消息到【我的客户】
+	 * 推送一条消息到Android客户端
 	 * @param employeeCode 员工号
 	 * @param msgCode 消息类型代号,用于判断是什么类型的消息
 	 * @param msgContent 消息内容(限制120字)
