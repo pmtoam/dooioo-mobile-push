@@ -7,23 +7,23 @@ import java.net.URL;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * »ùÓÚ°Ù¶ÈÔÆ·şÎñµÄµÂÓÓÏûÏ¢ÍÆËÍ¹¤¾ßÀà(½öÖ§³ÖÍÆËÍµ½AndroidÊÖ»ú)
+ * åŸºäºç™¾åº¦äº‘æœåŠ¡çš„å¾·ä½‘æ¶ˆæ¯æ¨é€å·¥å…·ç±»(ä»…æ”¯æŒæ¨é€åˆ°Androidæ‰‹æœº)
  * 
- * @author ÍõÔÂĞÇ | µÂÓÓ¹¤ºÅ£º104409 | ÊÖ»ú£º18116136307
- * @category µÂÓÓ-¾­¼ÍÑĞ·¢ÖĞĞÄ-ÑĞ·¢²¿-ÒÆ¶¯¿ª·¢²¿
+ * @author ç‹æœˆæ˜Ÿ | å¾·ä½‘å·¥å·ï¼š104409
+ * @category å¾·ä½‘-ç»çºªç ”å‘ä¸­å¿ƒ-ç ”å‘éƒ¨-ç§»åŠ¨å¼€å‘éƒ¨
  */
 public final class AxingDooiooMobilePush
 {
 
 	/**
-	 * ÍÆËÍÒ»ÌõÏûÏ¢µ½Android¿Í»§¶Ë
-	 * @param employeeCode Ô±¹¤ºÅ
-	 * @param msgCode ÏûÏ¢ÀàĞÍ´úºÅ,ÓÃÓÚÅĞ¶ÏÊÇÊ²Ã´ÀàĞÍµÄÏûÏ¢
-	 * @return ·µ»ØÖµÖ»×÷Îªµ÷ÊÔ£¬Êµ¼Êµ÷ÓÃÖĞ£¬Ö±½Óµ÷ÓÃ´Ë·½·¨£¬¿ÉºöÂÔÈÎºÎ·µ»ØÖµ£º<br>
-	 * 1£ºÍÆËÍ³É¹¦<br>
-	 * -1£ºÍÆËÍÊ§°Ü [²éÑ¯²»µ½°ó¶¨µÄID]<br>
-	 * -2£ºÍÆËÍÊ§°Ü [¿Í»§¶ËÃ»ÓĞ°ó¶¨]<br>
-	 * -3£ºÍÆËÍÊ§°Ü [employeeCode null]<br>
+	 * æ¨é€ä¸€æ¡æ¶ˆæ¯åˆ°Androidå®¢æˆ·ç«¯
+	 * @param employeeCode å‘˜å·¥å·
+	 * @param msgCode æ¶ˆæ¯ç±»å‹ä»£å·,ç”¨äºåˆ¤æ–­æ˜¯ä»€ä¹ˆç±»å‹çš„æ¶ˆæ¯
+	 * @return è¿”å›å€¼åªä½œä¸ºè°ƒè¯•ï¼Œå®é™…è°ƒç”¨ä¸­ï¼Œç›´æ¥è°ƒç”¨æ­¤æ–¹æ³•ï¼Œå¯å¿½ç•¥ä»»ä½•è¿”å›å€¼ï¼š<br>
+	 * 1ï¼šæ¨é€æˆåŠŸ<br>
+	 * -1ï¼šæ¨é€å¤±è´¥ [æŸ¥è¯¢ä¸åˆ°ç»‘å®šçš„ID]<br>
+	 * -2ï¼šæ¨é€å¤±è´¥ [å®¢æˆ·ç«¯æ²¡æœ‰ç»‘å®š]<br>
+	 * -3ï¼šæ¨é€å¤±è´¥ [employeeCode null]<br>
 	 */
 	public static int pushMessageOneOnlyUser(String employeeCode, MessageCode msgCode)
 	{
@@ -47,7 +47,7 @@ public final class AxingDooiooMobilePush
 			String message = String.format("{'title':'%s'," + "'description':'%s',"
 					+ "'notification_builder_id':0,"
 					+ "'notification_basic_style':7," + "'open_type':0,"
-					+ "'custom_content':{'msgCode':'" + msgCode + "'}}", "ÏûÏ¢ÌáĞÑ", "ÄúÊÕµ½Ò»ÌõĞÂÏûÏ¢");
+					+ "'custom_content':{'msgCode':'" + msgCode + "'}}", "æ¶ˆæ¯æé†’", "æ‚¨æ”¶åˆ°ä¸€æ¡æ–°æ¶ˆæ¯");
 			request.setMessages(message);
 			request.setPushType(PushType.single_user);
 			request.setMessageKeys("nonKeys");
@@ -67,17 +67,17 @@ public final class AxingDooiooMobilePush
 	}
 	
 	/**
-	 * ÍÆËÍÒ»ÌõÏûÏ¢µ½Android¿Í»§¶Ë
-	 * @param employeeCode Ô±¹¤ºÅ
-	 * @param msgCode ÏûÏ¢ÀàĞÍ´úºÅ,ÓÃÓÚÅĞ¶ÏÊÇÊ²Ã´ÀàĞÍµÄÏûÏ¢
-	 * @param msgContent ÏûÏ¢ÄÚÈİ(ÏŞÖÆ120×Ö)
-	 * @return ·µ»ØÖµÖ»×÷Îªµ÷ÊÔ£¬Êµ¼Êµ÷ÓÃÖĞ£¬Ö±½Óµ÷ÓÃ´Ë·½·¨£¬¿ÉºöÂÔÈÎºÎ·µ»ØÖµ£º<br>
-	 * 1£ºÍÆËÍ³É¹¦<br>
-	 * -1£ºÍÆËÍÊ§°Ü [²éÑ¯²»µ½°ó¶¨µÄID]<br>
-	 * -2£ºÍÆËÍÊ§°Ü [¿Í»§¶ËÃ»ÓĞ°ó¶¨]<br>
-	 * -3£ºÍÆËÍÊ§°Ü [employeeCode null]<br>
-	 * -4£ºÍÆËÍÊ§°Ü [msgContent null]<br>
-	 * -5£ºÍÆËÍÊ§°Ü [msgContent³¤¶È  > 120]<br>
+	 * æ¨é€ä¸€æ¡æ¶ˆæ¯åˆ°Androidå®¢æˆ·ç«¯
+	 * @param employeeCode å‘˜å·¥å·
+	 * @param msgCode æ¶ˆæ¯ç±»å‹ä»£å·,ç”¨äºåˆ¤æ–­æ˜¯ä»€ä¹ˆç±»å‹çš„æ¶ˆæ¯
+	 * @param msgContent æ¶ˆæ¯å†…å®¹(é™åˆ¶120å­—)
+	 * @return è¿”å›å€¼åªä½œä¸ºè°ƒè¯•ï¼Œå®é™…è°ƒç”¨ä¸­ï¼Œç›´æ¥è°ƒç”¨æ­¤æ–¹æ³•ï¼Œå¯å¿½ç•¥ä»»ä½•è¿”å›å€¼ï¼š<br>
+	 * 1ï¼šæ¨é€æˆåŠŸ<br>
+	 * -1ï¼šæ¨é€å¤±è´¥ [æŸ¥è¯¢ä¸åˆ°ç»‘å®šçš„ID]<br>
+	 * -2ï¼šæ¨é€å¤±è´¥ [å®¢æˆ·ç«¯æ²¡æœ‰ç»‘å®š]<br>
+	 * -3ï¼šæ¨é€å¤±è´¥ [employeeCode null]<br>
+	 * -4ï¼šæ¨é€å¤±è´¥ [msgContent null]<br>
+	 * -5ï¼šæ¨é€å¤±è´¥ [msgContenté•¿åº¦  > 120]<br>
 	 */
 	public static int pushMessageOneOnlyUser(String employeeCode, MessageCode msgCode, String msgContent)
 	{
@@ -111,7 +111,7 @@ public final class AxingDooiooMobilePush
 			String message = String.format("{'title':'%s'," + "'description':'%s',"
 					+ "'notification_builder_id':0,"
 					+ "'notification_basic_style':7," + "'open_type':0,"
-					+ "'custom_content':{'msgCode':'" + msgCode + "','msgContent':' " + msgContent + " '}}", "ÏûÏ¢ÌáĞÑ", "ÄúÊÕµ½Ò»ÌõĞÂÏûÏ¢");
+					+ "'custom_content':{'msgCode':'" + msgCode + "','msgContent':' " + msgContent + " '}}", "æ¶ˆæ¯æé†’", "æ‚¨æ”¶åˆ°ä¸€æ¡æ–°æ¶ˆæ¯");
 			request.setMessages(message);
 			request.setPushType(PushType.single_user);
 			request.setMessageKeys("nonKeys");
